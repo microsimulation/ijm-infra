@@ -38,4 +38,7 @@ module "ijm_elb" {
 
 module "ijm_cw" {
     source      = "./modules/ijm-cloudwatch"
+
+    alb_tg_arn_suf  = module.ijm_elb.out_alb_tg_suffix
+    alb_arn_suf     = module.ijm_elb.out_alb_suffix
 }
