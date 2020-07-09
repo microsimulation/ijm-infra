@@ -42,3 +42,7 @@ module "ijm_cw" {
     alb_tg_arn_suf  = module.ijm_elb.out_alb_tg_suffix
     alb_arn_suf     = module.ijm_elb.out_alb_suffix
 }
+
+module "ijm_ecr" {
+    source      = "./modules/ijm-ecr"
+}

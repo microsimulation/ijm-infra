@@ -33,3 +33,19 @@ output "ijm_eip_public_dns" {
 output "ijm_alb_dns" {
     value = module.ijm_elb.out_alb_dns
 }
+
+output "ijm_ecr_api_url" {
+    value = module.ijm_ecr.out_ecr_api_repo_url
+}
+
+output "ijm_ecr_journal_url" {
+    value = module.ijm_ecr.out_ecr_journal_repo_url
+}
+
+output "ijm_ecr_web_url" {
+    value = module.ijm_ecr.out_ecr_web_repo_url
+}
+
+output "ijm_ecr_reg_id" {
+    value = module.ijm_ecr.out_ecr_registry_id
+}
