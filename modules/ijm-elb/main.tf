@@ -12,7 +12,7 @@ resource "aws_lb" "elf_ijm_alb" {
     load_balancer_type  = "application"
     security_groups     = [var.elb_sg_id]
     subnets             = data.aws_subnet_ids.elb_subnets.ids
-    
+
     tags = {
         Name        = "ELF-IJM-ALB"
         Environment = "DEV"
@@ -39,7 +39,11 @@ resource "aws_lb_listener" "elf_ijm_ls" {
     protocol          = "HTTP"
 
     default_action {
-        type                = "forward"
-        target_group_arn    = aws_lb_target_group.elf_ijm_ec2_tg.arn 
+        type                = "redirect"
+        redirect {
+            port            = 443
+            protocol        = "HTTPS"
+            status_code     = "HTTP_301"
+        }
     }
 }
