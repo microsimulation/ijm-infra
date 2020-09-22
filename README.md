@@ -33,3 +33,6 @@ Please check next items before starting deployment:
 1. Check application access in your web browser:
     * If you skipped step 12, please use the ALB DNS record
     * If you executed step 12, please use created A record and port 80
+
+## Documentation
+You can find full project documentation [here](./docs/0_Introduction.md)
